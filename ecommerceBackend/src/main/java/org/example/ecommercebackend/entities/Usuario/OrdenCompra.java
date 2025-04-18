@@ -20,7 +20,9 @@ public class OrdenCompra implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOrdenCompra;
 
-    private Long idUsuarioDireccion;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "fk_usuario_direccion")
+    private UsuarioDireccion usuarioDireccion;
 
     @Column(name = "total")
     private Integer total;

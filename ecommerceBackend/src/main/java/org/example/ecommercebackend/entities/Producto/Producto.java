@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "producto")
@@ -33,4 +35,7 @@ public class Producto implements Serializable {
 
     @Column(name = "sexo")
     private String sexo;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetalleProducto> detalleProductos = new ArrayList<DetalleProducto>();
 }

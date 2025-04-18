@@ -27,7 +27,7 @@ public class DetalleProducto implements Serializable {
     @Column(name = "stock")
     private Number stock;
 
-    private Long idproducto;
+    //private Long idproducto; para mi no va aca
 
     @Column(name = "color")
     private String color;

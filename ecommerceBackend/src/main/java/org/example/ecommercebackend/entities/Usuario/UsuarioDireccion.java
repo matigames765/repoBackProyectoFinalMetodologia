@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario_direccion")
@@ -22,5 +24,6 @@ public class UsuarioDireccion implements Serializable {
 
     private Long idUsuario;
 
-    private Long idDireccion;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Direccion> direcciones = new ArrayList<Direccion>();
 }

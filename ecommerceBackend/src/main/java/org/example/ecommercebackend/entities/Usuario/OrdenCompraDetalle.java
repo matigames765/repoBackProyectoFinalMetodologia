@@ -20,12 +20,16 @@ public class OrdenCompraDetalle implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOrdenCompraDetalle;
 
-    private Long idOrdenCompra;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_orden_compra")
+    private OrdenCompra ordenCompra;
 
 
     private Long idProducto;
 
     @Column(name = "cantidad")
     private Integer cantidad;
+
+
 
 }
