@@ -26,14 +26,14 @@ public class Usuario implements Serializable {
     @Column(name = "contraseña")
     private String contraseña;
 
-    //@Column(name = "rol")
-    //private Rol rol;
+    @Column(name = "rol")
+    private Rol rol;
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "dni")
-    private Number dni;
+    private Integer dni;
 
     @Column(name = "direccion")
     private String direccion;

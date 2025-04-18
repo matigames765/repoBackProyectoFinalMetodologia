@@ -19,16 +19,17 @@ public class Producto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idProducto;
 
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "idCategoria")
-    private Long idCategoria;
+    @ManyToOne()
+    @JoinColumn(name = "fk_categoria")
+    private Categoria categoria;
 
-    //@Column(name = "tipo_producto") ver despues anotacion y manejo de enum
-    //private enum EnumTipoProducto;
+    @Column(name = "tipo_producto")
+    private TipoProducto tipoProducto;
 
     @Column(name = "sexo")
     private String sexo;

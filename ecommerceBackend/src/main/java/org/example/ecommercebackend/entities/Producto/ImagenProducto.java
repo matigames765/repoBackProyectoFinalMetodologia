@@ -23,7 +23,9 @@ public class ImagenProducto implements Serializable {
     @Column(name = "url")
     private String url;
 
-    private Long idDetalleProducto;
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name = "fk_detalle_producto")
+    private DetalleProducto DetalleProducto;
 
     @Column(name = "alt")
     private String alt;

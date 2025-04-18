@@ -7,25 +7,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "talles")
+@Table(name = "descuento_producto")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Talles implements Serializable {
+public class Descuento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTalle;
+    private Long idDescuento;
 
-    @Column(name = "talle")
-    private String talle;
+    @Column(name = "fecha_inicio")
+    private String fechaInicio;
 
-    @OneToMany(mappedBy = "talles")
-    private List<DetalleProducto> detalleProductos = new ArrayList<DetalleProducto>();
+    @Column(name = "fecha_fin")
+    private String fechaFin;
 
 }

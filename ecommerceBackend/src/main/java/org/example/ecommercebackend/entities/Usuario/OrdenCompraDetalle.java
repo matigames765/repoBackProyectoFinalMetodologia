@@ -18,12 +18,14 @@ public class OrdenCompraDetalle implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idOrdenCompraDetalle;
+
     private Long idOrdenCompra;
 
 
     private Long idProducto;
 
     @Column(name = "cantidad")
-    private Number cantidad;
+    private Integer cantidad;
 
 }

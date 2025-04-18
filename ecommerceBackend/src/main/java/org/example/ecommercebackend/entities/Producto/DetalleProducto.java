@@ -20,7 +20,9 @@ public class DetalleProducto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDetalleProducto;
 
-    //private Talle talle;
+    @ManyToOne()
+    @JoinColumn(name = "fk_talle")
+    private Talles talle;
 
     @Column(name = "stock")
     private Number stock;

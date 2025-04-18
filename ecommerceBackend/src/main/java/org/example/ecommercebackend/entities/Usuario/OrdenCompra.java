@@ -23,18 +23,14 @@ public class OrdenCompra implements Serializable {
     private Long idUsuarioDireccion;
 
     @Column(name = "total")
-    private Number total;
-
-    //@Column(name = "rol")
-    //private Rol rol;
+    private Integer total;
 
     @Column(name = "descuento")
-    private Number descuento;
+    private Integer descuento; //poner id del descuento?
 
     @Column(name = "fecha_compra")
     private String fechaCompra;
 
     @Column(name = "direccion_envio")
-    private String direccionEnvio
-            ;
+    private String direccionEnvio;
 }

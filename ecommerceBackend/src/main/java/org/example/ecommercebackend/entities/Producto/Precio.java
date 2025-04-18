@@ -20,16 +20,18 @@ public class Precio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPrecio;
 
-    //private Talle talle;
+    @Column(name = "precio_compra")
+    private Integer precioCompra;
 
-    @Column(name = "stock")
-    private Number stock;
+    @Column(name = "precio_venta")
+    private Integer precioVenta;
 
-    private Long idproducto;
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name = "fk_detalle_producto")
+    private DetalleProducto DetalleProducto;
 
-    @Column(name = "color")
-    private String color;
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) //no se si va remove ya que otro precio podria tener el mismo descuento
+    private Descuento descuento;
 
-    @Column(name = "estado")
-    private Boolean estado;
+
 }

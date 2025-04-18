@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
@@ -22,4 +24,9 @@ public class Categoria implements Serializable {
 
     @Column(name = "nombre")
     private String nombre;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos = new ArrayList<Producto>();
 }
+
+

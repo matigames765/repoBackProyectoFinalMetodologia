@@ -26,9 +26,6 @@ public class Direccion implements Serializable {
     @Column(name = "pais")
     private String pais;
 
-    //@Column(name = "rol")
-    //private Rol rol;
-
     @Column(name = "provincia")
     private String provincia;
 
