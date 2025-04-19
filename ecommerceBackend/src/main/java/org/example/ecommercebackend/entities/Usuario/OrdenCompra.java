@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
+import org.example.ecommercebackend.entities.Base;
 
 @Entity
 @Table(name = "orden_compra")
@@ -14,11 +13,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
-public class OrdenCompra implements Serializable {
+public class OrdenCompra extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idOrdenCompra;
+
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_usuario_direccion")

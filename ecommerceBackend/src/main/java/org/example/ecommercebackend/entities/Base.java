@@ -1,6 +1,5 @@
 package org.example.ecommercebackend.entities;
 
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,13 +9,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-
 @MappedSuperclass
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public abstract class Base implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    protected Long id;
 }

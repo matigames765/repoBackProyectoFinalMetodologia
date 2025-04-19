@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
+import org.example.ecommercebackend.entities.Base;
 
 @Entity
 @Table(name = "descuento_producto")
@@ -14,11 +13,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Descuento implements Serializable {
+public class Descuento extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDescuento;
 
     @Column(name = "fecha_inicio")
     private String fechaInicio;
