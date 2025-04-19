@@ -1,12 +1,9 @@
 package org.example.ecommercebackend.entities.Producto;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.example.ecommercebackend.entities.Base;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,16 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Talles implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idTalle;
+public class Talles extends Base {
 
     @Column(name = "talle")
     private String talle;
 
     @OneToMany(mappedBy = "talles")
     private List<DetalleProducto> detalleProductos = new ArrayList<DetalleProducto>();
-
 }

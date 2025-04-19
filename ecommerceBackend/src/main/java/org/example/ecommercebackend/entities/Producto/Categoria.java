@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.ecommercebackend.entities.Base;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +16,9 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Categoria implements Serializable {
+public class Categoria extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCategoria;
+
 
     @Column(name = "nombre")
     private String nombre;

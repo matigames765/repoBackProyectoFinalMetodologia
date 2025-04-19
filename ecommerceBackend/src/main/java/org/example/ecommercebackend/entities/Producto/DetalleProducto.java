@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serializable;
+import org.example.ecommercebackend.entities.Base;
 
 @Entity
 @Table(name = "detalle_producto")
@@ -14,11 +13,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DetalleProducto implements Serializable {
+public class DetalleProducto extends Base {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDetalleProducto;
 
     @ManyToOne()
     @JoinColumn(name = "fk_talle")
