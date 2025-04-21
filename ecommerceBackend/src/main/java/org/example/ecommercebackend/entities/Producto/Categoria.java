@@ -25,6 +25,8 @@ public class Categoria extends Base {
 
     @OneToMany(mappedBy = "categoria")
     private List<Producto> productos = new ArrayList<Producto>();
+
+    //vamos a hacer la categoria padre?
 }
 
 

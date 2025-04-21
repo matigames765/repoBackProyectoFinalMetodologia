@@ -44,7 +44,7 @@ public abstract class BaseService <E extends Base, ID extends Serializable>{
     }
 
     @Transactional
-    public E actualizar(E entity) throws Exception {
+    public E actualizar(E entity) throws Exception { //no debemos usar el id?
         try {
             return baseRepository.save(entity);
         } catch (Exception ex){
