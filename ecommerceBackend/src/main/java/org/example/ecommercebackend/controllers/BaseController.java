@@ -39,7 +39,7 @@ public class BaseController<E extends Base, ID extends Serializable> {
         return ResponseEntity.ok(entidadActualizada);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}") //me parece que debemos enviar el id para eliminar
     public void eliminar(@PathVariable ID id) throws Exception {
         baseService.eliminar(id);
     }
