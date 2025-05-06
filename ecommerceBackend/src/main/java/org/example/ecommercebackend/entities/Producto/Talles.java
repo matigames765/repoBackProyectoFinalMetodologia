@@ -18,4 +18,7 @@ public class Talles extends Base {
 
     @Column(name = "talle")
     private String talle;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetalleProducto> detallesProductos = new ArrayList<DetalleProducto>();
 }

@@ -1,7 +1,6 @@
 package org.example.ecommercebackend;
 
 import jakarta.transaction.Transactional;
-import org.example.ecommercebackend.entities.*;
 import org.example.ecommercebackend.entities.Producto.Categoria;
 import org.example.ecommercebackend.entities.Producto.DetalleProducto;
 import org.example.ecommercebackend.entities.Producto.Producto;
@@ -16,8 +15,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-
-import org.example.ecommercebackend.repositories.*;
 
 @SpringBootApplication
 public class EcommerceBackendApplication {
@@ -37,7 +34,6 @@ public class EcommerceBackendApplication {
 
             Talles talle1 = Talles.builder().
                     talle("45").
-                    detalleProductos(null).
                     build();
             tallesRepository.save(talle1);
 
@@ -46,6 +42,7 @@ public class EcommerceBackendApplication {
                     stock(34400).
                     color("rojo").
                     estado(true).
+                    ImagenProducto(null).
                     build();
             detalleProductoRepository.save(detalle1);
 
@@ -54,11 +51,12 @@ public class EcommerceBackendApplication {
                     stock(50000).
                     color("azul").
                     estado(true).
+                    ImagenProducto(null).
                     build();
             detalleProductoRepository.save(detalle2);
 
-            talle1.getDetalleProductos().add(detalle1);
-            talle1.getDetalleProductos().add(detalle2);
+            talle1.getDetallesProductos().add(detalle1);
+            talle1.getDetallesProductos().add(detalle2);
             tallesRepository.save(talle1);
 
             Categoria cate1 = Categoria.builder().
@@ -93,6 +91,25 @@ public class EcommerceBackendApplication {
             cate1.getProductos().add(producto2);
 
 
+            Producto producto3 = Producto.builder().
+                    nombre("zapatilla urbanas").
+                    categoria(cate2).
+                    tipoProducto(TipoProducto.ZAPATILLA).
+                    sexo("femenino").
+                    build();
+            productoRepository.save(producto3);
+
+            Producto producto4 = Producto.builder().
+                    nombre("Remera urbana").
+                    categoria(cate2).
+                    tipoProducto(TipoProducto.ZAPATILLA).
+                    sexo("masculino").
+                    build();
+            productoRepository.save(producto4);
+
+            cate2.getProductos().add(producto3);
+            cate2.getProductos().add(producto4);
+            categoriaRepository.save(cate2);
 
         };
     }
