@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.ecommercebackend.entities.Base;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,13 @@ public class Categoria extends Base {
     @OneToMany(mappedBy = "categoria")
     private List<Producto> productos = new ArrayList<Producto>();
 
-    //vamos a hacer la categoria padre?
+    @ManyToOne
+    @JoinColumn(name = "categoria_padre_id")
+    private Categoria categoriaPadre;
+
+    @OneToMany(mappedBy = "categoriaPadre")
+    private List<Categoria> subcategorias = new ArrayList<>();
+
 }
 
 

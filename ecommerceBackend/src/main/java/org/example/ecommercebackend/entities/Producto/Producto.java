@@ -33,5 +33,5 @@ public class Producto extends Base {
     private String sexo;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DetalleProducto> detalleProductos = new ArrayList<DetalleProducto>();
+    private List<DetalleProducto> detallesProductos = new ArrayList<DetalleProducto>();
 }
