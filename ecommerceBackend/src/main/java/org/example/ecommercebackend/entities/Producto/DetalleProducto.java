@@ -1,10 +1,7 @@
 package org.example.ecommercebackend.entities.Producto;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.example.ecommercebackend.entities.Base;
 
 @Entity
@@ -13,12 +10,12 @@ import org.example.ecommercebackend.entities.Base;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class DetalleProducto extends Base {
-
 
     @ManyToOne()
     @JoinColumn(name = "fk_talle")
-    private Talles talle;
+    private Talles talledetalleProductos;
 
     @Column(name = "stock")
     private Number stock;
@@ -30,4 +27,6 @@ public class DetalleProducto extends Base {
 
     @Column(name = "estado")
     private Boolean estado;
+
+    
 }

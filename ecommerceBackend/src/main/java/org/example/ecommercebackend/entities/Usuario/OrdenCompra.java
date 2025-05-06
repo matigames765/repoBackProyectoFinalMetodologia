@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.ecommercebackend.entities.Base;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "orden_compra")
 @AllArgsConstructor
@@ -28,7 +30,7 @@ public class OrdenCompra extends Base {
     private Integer descuento; //poner id del descuento?
 
     @Column(name = "fecha_compra")
-    private String fechaCompra;
+    private Date fechaCompra;
 
     @Column(name = "direccion_envio")
     private String direccionEnvio;

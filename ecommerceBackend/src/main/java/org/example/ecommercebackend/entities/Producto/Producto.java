@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.Builder;
 import org.example.ecommercebackend.entities.Base;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 //@Audited preguntar si hacer auditoria
 public class Producto extends Base {
 

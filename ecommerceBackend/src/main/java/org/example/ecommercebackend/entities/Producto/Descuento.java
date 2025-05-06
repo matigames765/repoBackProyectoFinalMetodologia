@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.ecommercebackend.entities.Base;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "descuento_producto")
 @AllArgsConstructor
@@ -17,9 +19,9 @@ public class Descuento extends Base {
 
 
     @Column(name = "fecha_inicio")
-    private String fechaInicio;
+    private Date fechaInicio;
 
     @Column(name = "fecha_fin")
-    private String fechaFin;
+    private Date fechaFin;
 
 }
