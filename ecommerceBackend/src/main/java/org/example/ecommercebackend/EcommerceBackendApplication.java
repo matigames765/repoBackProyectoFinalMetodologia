@@ -55,8 +55,8 @@ public class EcommerceBackendApplication {
                     build();
             detalleProductoRepository.save(detalle2);
 
-            talle1.getDetallesProductos().add(detalle1);
-            talle1.getDetallesProductos().add(detalle2);
+            talle1.addDetalleProducto(detalle1);
+            talle1.addDetalleProducto(detalle2);
             tallesRepository.save(talle1);
 
             Categoria cate1 = Categoria.builder().
@@ -87,8 +87,8 @@ public class EcommerceBackendApplication {
                     build();
             productoRepository.save(producto2);
 
-            cate1.getProductos().add(producto1);
-            cate1.getProductos().add(producto2);
+            //cate1.addProducto(producto1);
+            //cate1.addProducto(producto2);
 
 
             Producto producto3 = Producto.builder().
@@ -107,9 +107,9 @@ public class EcommerceBackendApplication {
                     build();
             productoRepository.save(producto4);
 
-            cate2.getProductos().add(producto3);
-            cate2.getProductos().add(producto4);
-            categoriaRepository.save(cate2);
+            //cate2.addProducto(producto3);
+            //cate2.addProducto(producto4);
+            //categoriaRepository.save(cate2);
 
         };
     }

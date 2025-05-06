@@ -21,18 +21,21 @@ import java.util.List;
 @Builder
 public class Categoria extends Base {
 
-
-
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Producto> productos = new ArrayList<Producto>();
+    @Builder.Default
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Producto> productos = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "categoria_padre_id")
     private Categoria categoriaPadre;
 
+    public void addProducto(Producto producto) {
+        productos.add(producto);
+        producto.setCategoria(this);
+    }
 
 }
 

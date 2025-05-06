@@ -34,6 +34,7 @@ public class Producto extends Base {
     @Column(name = "sexo")
     private String sexo;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DetalleProducto> detallesProductos = new ArrayList<DetalleProducto>();
+    @Builder.Default
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetalleProducto> detallesProductos = new ArrayList<>();
 }
