@@ -18,7 +18,4 @@ public class Talles extends Base {
 
     @Column(name = "talle")
     private String talle;
-
-    @OneToMany(mappedBy = "talles")
-    private List<DetalleProducto> detalleProductos = new ArrayList<DetalleProducto>();
 }

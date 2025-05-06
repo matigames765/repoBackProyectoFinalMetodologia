@@ -19,10 +19,6 @@ public class ImagenProducto extends Base {
     @Column(name = "url")
     private String url;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn(name = "fk_detalle_producto")
-    private DetalleProducto DetalleProducto;
-
     @Column(name = "alt")
     private String alt;
 
