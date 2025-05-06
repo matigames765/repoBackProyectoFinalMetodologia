@@ -21,10 +21,6 @@ public class Precio extends Base {
     @Column(name = "precio_venta")
     private Integer precioVenta;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn(name = "fk_detalle_producto")
-    private DetalleProducto DetalleProducto;
-
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) //no se si va remove ya que otro precio podria tener el mismo descuento
     private Descuento descuento;
 

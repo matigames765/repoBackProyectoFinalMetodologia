@@ -23,11 +23,21 @@ public class DetalleProducto extends Base {
     @Column(name = "stock")
     private Number stock;
 
-    //private Long idproducto; para mi no va aca
+    @ManyToOne
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name = "fk_precio")
+    private Precio precio;
 
     @Column(name = "color")
     private String color;
 
     @Column(name = "estado")
     private Boolean estado;
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @JoinColumn(name = "fk_imagen_producto")
+    private ImagenProducto ImagenProducto;
 }

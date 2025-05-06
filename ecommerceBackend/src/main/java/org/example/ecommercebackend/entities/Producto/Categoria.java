@@ -31,8 +31,6 @@ public class Categoria extends Base {
     @JoinColumn(name = "categoria_padre_id")
     private Categoria categoriaPadre;
 
-    @OneToMany(mappedBy = "categoriaPadre")
-    private List<Categoria> subcategorias = new ArrayList<>();
 
 }
 
