@@ -22,4 +22,6 @@ public class ImagenProducto extends Base {
     @Column(name = "alt")
     private String alt;
 
+
+
 }
